@@ -5,9 +5,10 @@ module sobel_isp (
     input  wire        [   7:0]         img_Y                      ,
 
     output reg         [  15:0]         sobel_data                 ,
-    output wire                           sobel_wr_en 
+    output wire                         sobel_wr_en                ,
+    output reg                          sobel_1bit                  
 );
-    parameter                           THR = 8'b0000_1100;
+    parameter                           THR = 8'b001_1011         ;
     parameter                           BLACK = 16'b0000_0000_0000_0000,
                                         WHITE = 16'B1111_1111_1111_1111;
 //reg define 
@@ -18,8 +19,8 @@ reg                    [   9:0]         Gy_temp1                   ;//第一行�
 reg                    [   9:0]         Gy_temp2                   ;//第三行值
 reg                    [   9:0]         Gy_data                    ;//y方向的偏导数
 reg                    [  20:0]         Gxy_square                 ;
-wire                    [  10:0]         Gxy_sqrt                   ;
-reg [4:0] wr_en_dly;
+wire                   [  10:0]         Gxy_sqrt                   ;
+reg                    [   4:0]         wr_en_dly                  ;
 //输出3X3 矩阵
 wire                   [   7:0]         matrix_p11                 ;
 wire                   [   7:0]         matrix_p12                 ;
@@ -35,7 +36,7 @@ wire                                    martrix_wr_en              ;
 wire                                    sobel_en                   ;
 
 assign sobel_wr_en = wr_en_dly[4];
-matrix3_3_generate u_matrix3_3_generate(
+matrix3_3_generate_8bit u_matrix3_3_generate_8bit(
     .sys_clk                           (sys_clk                   ),
     .sys_rst_n                         (sys_rst_n                 ),
     .wr_en                             (wr_en                     ),
@@ -66,8 +67,8 @@ always@(posedge sys_clk or negedge sys_rst_n)begin
         Gy_data <=  10'd0;
     end
     else if(sobel_en == 1'b1) begin
-        Gy_temp1 <= matrix_p13 + (matrix_p23 << 1) + matrix_p33; 
-        Gy_temp2 <= matrix_p11 + (matrix_p21 << 1) + matrix_p31; 
+        Gy_temp1 <= matrix_p13 + (matrix_p23 << 1) + matrix_p33;
+        Gy_temp2 <= matrix_p11 + (matrix_p21 << 1) + matrix_p31;
         Gy_data <= (Gy_temp1 >= Gy_temp2) ? Gy_temp1 - Gy_temp2 : (Gy_temp2 - Gy_temp1);//确保结果是正数
     end
 end
@@ -79,8 +80,8 @@ always@(posedge sys_clk or negedge sys_rst_n)begin
         Gx_data <=  10'd0;
     end
     else if(sobel_en == 1'b1) begin
-        Gx_temp1 <= matrix_p11 + (matrix_p12 << 1) + matrix_p13; 
-        Gx_temp2 <= matrix_p31 + (matrix_p32 << 1) + matrix_p33; 
+        Gx_temp1 <= matrix_p11 + (matrix_p12 << 1) + matrix_p13;
+        Gx_temp2 <= matrix_p31 + (matrix_p32 << 1) + matrix_p33;
         Gx_data <= (Gx_temp1 >= Gx_temp2) ? Gx_temp1 - Gx_temp2 : (Gx_temp2 - Gx_temp1);
     end
 end
@@ -93,22 +94,28 @@ always@(posedge sys_clk or negedge sys_rst_n)begin
 end
 //Step 4 开平方（梯度向量的大小）
 sqrt u_sqrt(
-    .radical   (Gxy_square   ),
-    .q         (Gxy_sqrt         ),
-    .remainder ( )
+    .radical                           (Gxy_square                ),
+    .q                                 (Gxy_sqrt                  ),
+    .remainder                         (                          ) 
 );
 //step5：与设置阈值比较
 always @(posedge sys_clk or negedge sys_rst_n) begin
-    if(sys_rst_n == 1'b0)
-    	sobel_data <= 16'd0;
-    else if(Gxy_sqrt >= THR && sobel_en == 1'b1)
+    if(sys_rst_n == 1'b0)begin
+        sobel_data <= 16'd0;
+        sobel_1bit <= 1'b0;
+    end     
+    else if(Gxy_sqrt >= THR && sobel_en == 1'b1)begin
         sobel_data <= BLACK;
-    else
-        sobel_data <= WHITE;
+        sobel_1bit <= 1'b0;
+    end
+    else begin
+        sobel_data <= WHITE;  
+        sobel_1bit <= 1'b1;      
+    end
 end
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(sys_rst_n == 1'b0)
-    	wr_en_dly <= 1'b0;
+        wr_en_dly <= 1'b0;
     else
         wr_en_dly <= {wr_en_dly[3:0],wr_en};
 end

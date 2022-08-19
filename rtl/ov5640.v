@@ -47,9 +47,8 @@ wire                                    rd_en                      ;//sdram读�
 wire                   [  15:0]         rd_data                    ;//sdram读数据
 wire                                    sdram_init_done            ;//SDRAM初始化完成
 wire                                    sys_init_done              ;//系统初始化完成(SDRAM初始化+摄像头初始化)        
-wire [7:0] img_Y;
-wire [15:0] sobel_data ;
-wire sobel_wr_en;
+wire isp_wr_en;
+wire [15:0] isp_rgb565;
 //sys_init_done:系统初始化完成(SDRAM初始化+摄像头初始化)
 assign  sys_init_done = sdram_init_done & cfg_done;
 
@@ -81,25 +80,15 @@ ov5640_top u_ov5640_top(
     .sccb_scl                          (sccb_scl                  ),
     .sccb_sda                          (sccb_sda                  ) 
 );
-rgb_ycbcr u_rgb_ycbcr(
-    .sys_clk                           (ov5640_pclk                   ),
-    .sys_rst_n                         (rst_n                     ),
-    .pre_wr_en                         (wr_en                     ),
-    .ov5640_data                       (ov5640_data_out           ),
-    .wr_en_dly                         (wr_en_dly                 ),
-    .rgb565_data                       (                   ),
-    .img_y                             (      img_Y                    ),
-    .img_cb                            (                          ),
-    .img_cr                            (                          ) 
+isp_top u_isp_top(
+    .sys_clk         (ov5640_pclk         ),
+    .sys_rst_n       (rst_n       ),
+    .wr_en           (wr_en           ),
+    .ov5640_data_out (ov5640_data_out ),
+    .isp_wr_en       (isp_wr_en       ),
+    .isp_rgb565      (isp_rgb565      )
 );
-sobel_isp u_sobel_isp(
-    .sys_clk     (ov5640_pclk     ),
-    .sys_rst_n   (rst_n   ),
-    .wr_en       (wr_en_dly       ),
-    .img_Y       (img_Y       ),
-    .sobel_data  (sobel_data  ),
-    .sobel_wr_en (sobel_wr_en )
-);
+
 
 sdram_top   sdram_top_inst(
 
@@ -108,8 +97,8 @@ sdram_top   sdram_top_inst(
     .sys_rst_n                         (rst_n                     ),//系统复位
 //用户写端口    
     .wr_fifo_wr_clk                    (ov5640_pclk               ),//写端口FIFO: 写时钟
-    .wr_fifo_wr_req                    (sobel_wr_en                 ),//写端口FIFO: 写使能
-    .wr_fifo_wr_data                   (sobel_data                   ),//写端口FIFO: 写数据
+    .wr_fifo_wr_req                    (       isp_wr_en          ),//写端口FIFO: 写使能
+    .wr_fifo_wr_data                   (isp_rgb565                   ),//写端口FIFO: 写数据
     .sdram_wr_b_addr                   (24'd0                     ),//写SDRAM的起始地址
     .sdram_wr_e_addr                   (H_PIXEL*V_PIXEL           ),//写SDRAM的结束地址
     .wr_burst_len                      (10'd512                   ),//写SDRAM时的数据突发长度
@@ -138,20 +127,7 @@ sdram_top   sdram_top_inst(
     .sdram_dq                          (sdram_dq                  ),//SDRAM 数据
     .sdram_dqm                         (sdram_dqm                 ) //SDRAM 数据掩码
 
-);/*
-sobel_ctrl
-#(
-    .CNT_COL_MAX                       ('d800                     ),
-    .CNT_ROW_MAX                       ('d480                     ) 
-)
-u_sobel_ctrl(
-    .sys_clk                           (clk_33m                   ),
-    .sys_rst_n                         (rst_n                     ),
-    .pi_flag                           (rd_en                     ),
-    .pi_data                           (rd_data                   ),
-    .po_data                           (po_data                   ) 
-);*/
-
+);
 tft_ctrl u_tft_ctrl(
     .clk_33m                           (clk_33m                   ),
     .sys_rst_n                         (rst_n                     ),
