@@ -47,9 +47,9 @@ begin
         end
     else
         begin
-        post_img_Bit1 <= matrix_p11 & matrix_p12 & matrix_p13;
-        post_img_Bit2 <= matrix_p21 & matrix_p22 & matrix_p23;
-        post_img_Bit3 <= matrix_p21 & matrix_p32 & matrix_p33;
+        post_img_Bit1 <= matrix_p11 | matrix_p12 | matrix_p13;
+        post_img_Bit2 <= matrix_p21 | matrix_p22 | matrix_p23;
+        post_img_Bit3 <= matrix_p21 | matrix_p32 | matrix_p33;
         end
 end
 //*step2
@@ -58,7 +58,7 @@ begin
     if(!sys_rst_n)
         post_img_Bit4 <= 1'b0;
     else
-        post_img_Bit4 <= post_img_Bit1 & post_img_Bit2 & post_img_Bit3;
+        post_img_Bit4 <= post_img_Bit1 | post_img_Bit2 | post_img_Bit3;
 end
 assign img_1bit_out = erosion_wr_en ? post_img_Bit4 : 1'b0;
 assign erosion_rgb565 = img_1bit_out ? 16'hffff : 16'h0000;

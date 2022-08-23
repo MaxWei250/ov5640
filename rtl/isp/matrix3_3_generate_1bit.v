@@ -46,7 +46,8 @@ shift_register_1bit u_shift_register_1bit(
     .clken    (wr_en    ),
     .clock    (sys_clk    ),
     .shiftin  (row3_data  ),
-    .shiftout ( ),
+
+    .shiftout (            ),
     .taps0x   (row2_data   ),
     .taps1x   (row1_data   )
 );
@@ -66,9 +67,9 @@ end
 //在同步信号控制下，输出图像矩阵
 always@(posedge sys_clk or negedge sys_rst_n) begin
     if(!sys_rst_n) begin
-        {matrix_p11, matrix_p12, matrix_p13} <= 24'h0;
-        {matrix_p21, matrix_p22, matrix_p23} <= 24'h0;
-        {matrix_p31, matrix_p32, matrix_p33} <= 24'h0;
+        {matrix_p11, matrix_p12, matrix_p13} <= 3'd0;
+        {matrix_p21, matrix_p22, matrix_p23} <= 3'd0;
+        {matrix_p31, matrix_p32, matrix_p33} <= 3'd0;
     end
     else if(martrix_wr_en == 1'b1 && cnt_pic == CNT_PIC_MAX) begin
         {matrix_p11, matrix_p12, matrix_p13} <= {matrix_p12, matrix_p13, row1_data};

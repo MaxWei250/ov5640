@@ -26,6 +26,11 @@ module        ov5640                                                //请输入�
     output wire                         ov5640_rst_n               ,
     output wire                         ov5640_pwdn                ,
 
+    //*DEBUG
+    output wire led0,
+    output wire led1,
+    output wire led2,
+
     output wire                         sccb_scl                   ,
     inout  wire                         sccb_sda                    
 );
@@ -47,8 +52,8 @@ wire                                    rd_en                      ;//sdram读�
 wire                   [  15:0]         rd_data                    ;//sdram读数据
 wire                                    sdram_init_done            ;//SDRAM初始化完成
 wire                                    sys_init_done              ;//系统初始化完成(SDRAM初始化+摄像头初始化)        
-wire isp_wr_en;
-wire [15:0] isp_rgb565;
+wire                                    isp_wr_en                  ;
+wire                   [  15:0]         isp_rgb565                 ;
 //sys_init_done:系统初始化完成(SDRAM初始化+摄像头初始化)
 assign  sys_init_done = sdram_init_done & cfg_done;
 
@@ -57,7 +62,9 @@ assign  ov5640_rst_n = 1'b1;
 
 //ov5640_pwdn
 assign  ov5640_pwdn = 1'b0;
-
+assign led0 = sys_init_done;
+assign led1 = cfg_done;
+assign led2 = sdram_init_done;
 clk_gen u_clk_gen(
     .areset                            (~sys_rst_n                ),
     .inclk0                            (sys_clk                   ),
@@ -81,12 +88,12 @@ ov5640_top u_ov5640_top(
     .sccb_sda                          (sccb_sda                  ) 
 );
 isp_top u_isp_top(
-    .sys_clk         (ov5640_pclk         ),
-    .sys_rst_n       (rst_n       ),
-    .wr_en           (wr_en           ),
-    .ov5640_data_out (ov5640_data_out ),
-    .isp_wr_en       (isp_wr_en       ),
-    .isp_rgb565      (isp_rgb565      )
+    .sys_clk                           (ov5640_pclk               ),
+    .sys_rst_n                         (rst_n                     ),
+    .wr_en                             (wr_en                     ),
+    .ov5640_data_out                   (ov5640_data_out           ),
+    .isp_wr_en                         (isp_wr_en                 ),
+    .isp_rgb565                        (isp_rgb565                ) 
 );
 
 
@@ -97,8 +104,8 @@ sdram_top   sdram_top_inst(
     .sys_rst_n                         (rst_n                     ),//系统复位
 //用户写端口    
     .wr_fifo_wr_clk                    (ov5640_pclk               ),//写端口FIFO: 写时钟
-    .wr_fifo_wr_req                    (       isp_wr_en          ),//写端口FIFO: 写使能
-    .wr_fifo_wr_data                   (isp_rgb565                   ),//写端口FIFO: 写数据
+    .wr_fifo_wr_req                    (isp_wr_en                 ),//写端口FIFO: 写使能
+    .wr_fifo_wr_data                   (isp_rgb565                ),//写端口FIFO: 写数据
     .sdram_wr_b_addr                   (24'd0                     ),//写SDRAM的起始地址
     .sdram_wr_e_addr                   (H_PIXEL*V_PIXEL           ),//写SDRAM的结束地址
     .wr_burst_len                      (10'd512                   ),//写SDRAM时的数据突发长度

@@ -106,13 +106,14 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     end     
     else if(Gxy_sqrt >= THR && sobel_en == 1'b1)begin
         sobel_data <= BLACK;
-        sobel_1bit <= 1'b0;
+        sobel_1bit <= 1'd0;
     end
     else begin
         sobel_data <= WHITE;  
-        sobel_1bit <= 1'b1;      
+        sobel_1bit <= 1'd1;      
     end
 end
+
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(sys_rst_n == 1'b0)
         wr_en_dly <= 1'b0;

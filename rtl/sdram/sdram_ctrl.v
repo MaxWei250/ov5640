@@ -1,21 +1,3 @@
-`timescale  1ns/1ns
-////////////////////////////////////////////////////////////////////////
-// Author        : EmbedFire
-// Create Date   : 2019/08/25
-// Module Name   : sdram_ctrl
-// Project Name  : ov5640_tft_480x272
-// Target Devices: Altera EP4CE10F17C8N
-// Tool Versions : Quartus 13.0
-// Description   : SDRAM控制模块
-// 
-// Revision      : V1.0
-// Additional Comments:
-// 
-// 实验平台: 野火_征途Pro_FPGA开发板
-// 公司    : http://www.embedfire.com
-// 论坛    : http://www.firebbs.cn
-// 淘宝    : https://fire-stm32.taobao.com
-////////////////////////////////////////////////////////////////////////
 module  sdram_ctrl
 (
     input   wire            sys_clk         ,   //系统时钟
