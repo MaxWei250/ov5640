@@ -1,0 +1,20 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+E:/FPGAproject/34.ov5640/rtl/ov56400 {E:/FPGAproject/34.ov5640/rtl/ov56400/ov5640_top.v}
+vlog -vlog01compat -work work +incdir+E:/FPGAproject/34.ov5640/rtl/ov56400 {E:/FPGAproject/34.ov5640/rtl/ov56400/ov5640_cfg.v}
+vlog -vlog01compat -work work +incdir+E:/FPGAproject/34.ov5640/rtl/ov56400 {E:/FPGAproject/34.ov5640/rtl/ov56400/i2c_ctrl.v}
+vlog -vlog01compat -work work +incdir+E:/FPGAproject/34.ov5640/rtl/ov56400 {E:/FPGAproject/34.ov5640/rtl/ov56400/ov5640_data.v}
+
+vlog -vlog01compat -work work +incdir+E:/FPGAproject/34.ov5640/quartus_prj/../sim {E:/FPGAproject/34.ov5640/quartus_prj/../sim/tb_ov5640_data.v}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb_ov5640_data
+
+add wave *
+view structure
+view signals
+run 1 us

@@ -4,9 +4,11 @@ module matrix3_3_generate_8bit (
 
     input  wire                         wr_en                      ,
     input  wire        [   7:0]         img_Y                      ,//输入灰度数据
+    input  wire                         pre_href                   ,
 
-    output reg                          sobel_en,
-    output reg                          martrix_wr_en              ,
+    output reg                          sobel_en                   ,
+    output reg                          matrix_wr_en              ,
+    output reg                          matrix_href,
     output reg         [   7:0]         matrix_p11                 ,
     output reg         [   7:0]         matrix_p12                 ,
     output reg         [   7:0]         matrix_p13                 ,
@@ -23,6 +25,7 @@ wire                   [   7:0]         row2_data                  ;
 
 reg                                     pre_sobel_en               ;
 reg                    [   1:0]         wr_en_dly0                 ;
+reg                    [   1:0]         href_reg                   ;
 reg                    [   7:0]         row3_data                  ;
 reg                    [  11:0]         cnt_pic                    ;
 always @(posedge sys_clk or negedge sys_rst_n) begin
@@ -44,24 +47,38 @@ always@(posedge sys_clk or negedge sys_rst_n) begin
             row3_data <= row3_data ;
     end
 end
-shift_register u_shift_register_8bit(
-    .clken                             (wr_en                     ),
+
+line_shift_RAM_8bit u_line_shift_RAM_8bit(
     .clock                             (sys_clk                   ),
+    .clken                             (wr_en                     ),
+    .per_frame_href                    (pre_href                  ),
     .shiftin                           (row3_data                 ),
-    .shiftout                          (                          ),
     .taps0x                            (row2_data                 ),
     .taps1x                            (row1_data                 ) 
 );
+
 //打两拍以便同步信号
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(sys_rst_n == 1'b0)begin
         wr_en_dly0 <= 2'b00;
-        martrix_wr_en <= 1'b0;
+        matrix_wr_en <= 1'b0;
     end
     else begin
         wr_en_dly0[0] <= wr_en;
         wr_en_dly0[1] <= wr_en_dly0[0];
-        martrix_wr_en <= wr_en_dly0[1];
+        matrix_wr_en  <= wr_en_dly0[1];
+    end
+end
+
+always @(posedge sys_clk or negedge sys_rst_n) begin
+    if(sys_rst_n == 1'b0) begin
+    	href_reg    <= 2'd0;
+        matrix_href <= 1'b0;
+    end
+    else begin
+        href_reg[0] <= pre_href;
+        href_reg[1] <= href_reg[0];
+        matrix_href <= href_reg[1];
     end
 end
 //在同步信号控制下，输出图像矩阵
@@ -71,7 +88,7 @@ always@(posedge sys_clk or negedge sys_rst_n) begin
         {matrix_p21, matrix_p22, matrix_p23} <= 24'h0;
         {matrix_p31, matrix_p32, matrix_p33} <= 24'h0;
     end
-    else if(martrix_wr_en == 1'b1 && cnt_pic == CNT_PIC_MAX) begin
+    else if(matrix_wr_en == 1'b1 && cnt_pic == CNT_PIC_MAX) begin
         {matrix_p11, matrix_p12, matrix_p13} <= {matrix_p12, matrix_p13, row1_data};
         {matrix_p21, matrix_p22, matrix_p23} <= {matrix_p22, matrix_p23, row2_data};
         {matrix_p31, matrix_p32, matrix_p33} <= {matrix_p32, matrix_p33, row3_data};
@@ -86,7 +103,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     if(sys_rst_n == 1'b0)begin
         pre_sobel_en <= 1'b0;
     end
-    else if(cnt_pic == CNT_PIC_MAX && martrix_wr_en == 1'b1)begin
+    else if(cnt_pic == CNT_PIC_MAX && matrix_wr_en == 1'b1)begin
         pre_sobel_en <= 1'b1;
     end
 end

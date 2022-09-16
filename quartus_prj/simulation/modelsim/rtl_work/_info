@@ -1,0 +1,688 @@
+m255
+K4
+z2
+!s11f vlog 2019.2 2019.04, Apr 17 2019
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/FPGA_isp/ov5640_sobel/quartus_prj/simulation/modelsim
+T_opt
+!s110 1663332604
+VAaGES70n3cRS>e25GZnjX3
+04 21 4 work tb_matrix3_3_generate fast 0
+=1-1cbfc0ba9c1d-632470fc-245-26b0
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2019.2;69
+vblk_mem_gen_0
+Z2 !s110 1663332596
+!i10b 1
+!s100 mLbkofo<_P3oK3K<4K]2^3
+!s11b 6aF7>QINHGkPM?gY2lf]c3
+I<hbJfIGbC:R8l;0dC>KXY2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1663332551
+8E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/ram/blk_mem_gen_0.v
+FE:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/ram/blk_mem_gen_0.v
+Z4 L0 39
+Z5 OL;L;2019.2;69
+r1
+!s85 0
+31
+Z6 !s108 1663332596.000000
+!s107 E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/ram/blk_mem_gen_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/ram|E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/ram/blk_mem_gen_0.v|
+!i113 0
+Z7 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/ram -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vclk_gen
+Z8 !s110 1663332595
+!i10b 1
+!s100 97cgn[?fk4ll6E]6VSX:01
+!s11b ^RNNklIL88h>UVUF]]75f0
+I<NVLc@8zc^:eggXVkj]]_0
+R3
+R0
+w1660488410
+8E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/clk_gen/clk_gen.v
+FE:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/clk_gen/clk_gen.v
+R4
+R5
+r1
+!s85 0
+31
+Z9 !s108 1663332595.000000
+!s107 E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/clk_gen/clk_gen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/clk_gen|E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/clk_gen/clk_gen.v|
+!i113 0
+R7
+!s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/clk_gen -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vclk_gen_altpll
+R2
+!i10b 1
+!s100 ;POX>cIFgPR2M`lGXa9K;0
+!s11b CRa5J_e3A1`NcQE@AU=K53
+IMW9X[>AREe1nN`6O>AUFf1
+R3
+R0
+w1660488412
+8E:/FPGA_isp/ov5640_sobel/quartus_prj/db/clk_gen_altpll.v
+FE:/FPGA_isp/ov5640_sobel/quartus_prj/db/clk_gen_altpll.v
+L0 30
+R5
+r1
+!s85 0
+31
+R6
+!s107 E:/FPGA_isp/ov5640_sobel/quartus_prj/db/clk_gen_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/db|E:/FPGA_isp/ov5640_sobel/quartus_prj/db/clk_gen_altpll.v|
+!i113 0
+R7
+!s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/db -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vfifo_ctrl
+R8
+!i10b 1
+!s100 G6E>^3K_mMj09MSh>lm;I3
+!s11b 0>z2=ONXmdUT9Y_hQ11bR1
+IJ2MF;FfP>jhRHDz69MnK62
+R3
+R0
+w1660711335
+8E:/FPGA_isp/ov5640_sobel/rtl/sdram/fifo_ctrl.v
+FE:/FPGA_isp/ov5640_sobel/rtl/sdram/fifo_ctrl.v
+L0 1
+R5
+r1
+!s85 0
+31
+R9
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/sdram/fifo_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/sdram|E:/FPGA_isp/ov5640_sobel/rtl/sdram/fifo_ctrl.v|
+!i113 0
+R7
+Z10 !s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/rtl/sdram -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vfifo_data
+R8
+!i10b 1
+!s100 neZ@`OOIOR5mQ0cQiJbhQ1
+!s11b A456bL?n2gon>_YS5m5aa3
+IS?LAm4FbZeJdIi=Xj640N0
+R3
+R0
+w1660528219
+8E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/fifo_data/fifo_data.v
+FE:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/fifo_data/fifo_data.v
+R4
+R5
+r1
+!s85 0
+31
+R9
+!s107 E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/fifo_data/fifo_data.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/fifo_data|E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/fifo_data/fifo_data.v|
+!i113 0
+R7
+!s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/fifo_data -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vi2c_ctrl
+Z11 !s110 1663332594
+!i10b 1
+!s100 =o9GCMP18o<Kz68Jc2DMJ0
+!s11b EQ=54DXeaO4SND0Q8]W0=3
+Im2V^bSFcizkihbXA5i1?C2
+R3
+R0
+w1660531858
+8E:/FPGA_isp/ov5640_sobel/rtl/ov5640/i2c_ctrl.v
+FE:/FPGA_isp/ov5640_sobel/rtl/ov5640/i2c_ctrl.v
+L0 1
+R5
+r1
+!s85 0
+31
+Z12 !s108 1663332594.000000
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/ov5640/i2c_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/ov5640|E:/FPGA_isp/ov5640_sobel/rtl/ov5640/i2c_ctrl.v|
+!i113 0
+R7
+Z13 !s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/rtl/ov5640 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+visp_1bit_dilation
+Z14 !s110 1663332593
+!i10b 1
+!s100 jkRBOSRH6cjhilIhA3EM10
+!s11b ?62CnZJRoU_e?WMj38C`O0
+IiO]nX261bCQe32ZJY>^1@0
+R3
+R0
+w1661248471
+8E:/FPGA_isp/ov5640_sobel/rtl/isp/isp_1bit_dilation.v
+FE:/FPGA_isp/ov5640_sobel/rtl/isp/isp_1bit_dilation.v
+L0 1
+R5
+r1
+!s85 0
+31
+Z15 !s108 1663332593.000000
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/isp/isp_1bit_dilation.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/isp|E:/FPGA_isp/ov5640_sobel/rtl/isp/isp_1bit_dilation.v|
+!i113 0
+R7
+Z16 !s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/rtl/isp -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+visp_1bit_erosion
+R11
+!i10b 1
+!s100 oDEME6DLa@fzlWPAzRZ0d2
+!s11b ^DPVPNlmK_njdHYRfRB2S1
+I<^`4WbIIL0U77YOi=7E;m0
+R3
+R0
+w1661248254
+8E:/FPGA_isp/ov5640_sobel/rtl/isp/isp_1bit_erosion.v
+FE:/FPGA_isp/ov5640_sobel/rtl/isp/isp_1bit_erosion.v
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/isp/isp_1bit_erosion.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/isp|E:/FPGA_isp/ov5640_sobel/rtl/isp/isp_1bit_erosion.v|
+!i113 0
+R7
+R16
+R1
+visp_top
+R14
+!i10b 1
+!s100 @_h91S1e0YPhz7feT@9?k2
+!s11b cA6=KF[@nh=k2XeI?2_@P3
+IiY;kY19;1@9zZBj`g`>2L1
+R3
+R0
+w1661248359
+8E:/FPGA_isp/ov5640_sobel/rtl/isp/isp_top.v
+FE:/FPGA_isp/ov5640_sobel/rtl/isp/isp_top.v
+L0 1
+R5
+r1
+!s85 0
+31
+R15
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/isp/isp_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/isp|E:/FPGA_isp/ov5640_sobel/rtl/isp/isp_top.v|
+!i113 0
+R7
+R16
+R1
+vline_shift_RAM_8bit
+R14
+!i10b 1
+!s100 AUkHO9?OFHfC58mQzJ`R32
+!s11b KzDBI:z?::Il]EP2G0CJS3
+I`LWAUOa=0HSNBjmjAUNb62
+R3
+R0
+w1663332488
+8E:/FPGA_isp/ov5640_sobel/rtl/isp/line_shift_RAM_8bit.v
+FE:/FPGA_isp/ov5640_sobel/rtl/isp/line_shift_RAM_8bit.v
+L0 1
+R5
+r1
+!s85 0
+31
+R15
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/isp/line_shift_RAM_8bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/isp|E:/FPGA_isp/ov5640_sobel/rtl/isp/line_shift_RAM_8bit.v|
+!i113 0
+R7
+R16
+R1
+nline_shift_@r@a@m_8bit
+vmatrix3_3_generate_1bit
+R11
+!i10b 1
+!s100 Mk4V7<^bjan`LEZ8iNVII2
+!s11b C^e5;X[;@CzE]koXICaUe3
+INZ5kkOD>ZEG^AQfkn]X2J1
+R3
+R0
+w1661245616
+8E:/FPGA_isp/ov5640_sobel/rtl/isp/matrix3_3_generate_1bit.v
+FE:/FPGA_isp/ov5640_sobel/rtl/isp/matrix3_3_generate_1bit.v
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/isp/matrix3_3_generate_1bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/isp|E:/FPGA_isp/ov5640_sobel/rtl/isp/matrix3_3_generate_1bit.v|
+!i113 0
+R7
+R16
+R1
+vmatrix3_3_generate_8bit
+R11
+!i10b 1
+!s100 k<;@K<BFVh68o_XZA=]dj1
+!s11b 15=2b0<ie2ec@=d5?kKU>3
+IXoAVo@gDQ=I9L?In_[Gl22
+R3
+R0
+w1663331964
+8E:/FPGA_isp/ov5640_sobel/rtl/isp/matrix3_3_generate_8bit.v
+FE:/FPGA_isp/ov5640_sobel/rtl/isp/matrix3_3_generate_8bit.v
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/isp/matrix3_3_generate_8bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/isp|E:/FPGA_isp/ov5640_sobel/rtl/isp/matrix3_3_generate_8bit.v|
+!i113 0
+R7
+R16
+R1
+vov5640
+R8
+!i10b 1
+!s100 =KXWH<5S5C8hMbQB>iBFZ3
+!s11b fE10<;<hE;PXlQ5nN53CA1
+Ij^hXma<=O6Rc;zBokOVCz1
+R3
+R0
+w1661224312
+8E:/FPGA_isp/ov5640_sobel/rtl/ov5640.v
+FE:/FPGA_isp/ov5640_sobel/rtl/ov5640.v
+L0 1
+R5
+r1
+!s85 0
+31
+R9
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/ov5640.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl|E:/FPGA_isp/ov5640_sobel/rtl/ov5640.v|
+!i113 0
+R7
+Z17 !s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vov5640_cfg
+R11
+!i10b 1
+!s100 aG9WlYNf5T1S?]j<1ZXWj2
+!s11b @<lgjX=M6IbjaaJBMjZP=2
+IS`0D2JG]BDo:L]6THA3]K3
+R3
+R0
+w1660545825
+8E:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_cfg.v
+FE:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_cfg.v
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_cfg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/ov5640|E:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_cfg.v|
+!i113 0
+R7
+R13
+R1
+vov5640_data
+R11
+!i10b 1
+!s100 <hX4T=jamT^M<9nKHfX;`1
+!s11b eA]MTBZ0H;1566T]QQeK23
+IhbY``Qo;XkRV6Q:mPb_IZ1
+R3
+R0
+w1660733754
+8E:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_data.v
+FE:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_data.v
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_data.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/ov5640|E:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_data.v|
+!i113 0
+R7
+R13
+R1
+vov5640_top
+R11
+!i10b 1
+!s100 i6BjITYS<<Egc2O6UkmW70
+!s11b hG:jVa0;3LOi88^h@3NS?2
+IKA2`Q0oMeKP^?SOFmHl0z1
+R3
+R0
+w1660550415
+8E:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_top.v
+FE:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_top.v
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/ov5640|E:/FPGA_isp/ov5640_sobel/rtl/ov5640/ov5640_top.v|
+!i113 0
+R7
+R13
+R1
+vrgb_ycbcr
+R11
+!i10b 1
+!s100 =1I]QF=7cNlF7M`FJTbdX1
+!s11b k2`9OdQz1oFA`7he^I2]Q1
+I[OMPcGQ15EODz9G386@EI2
+R3
+R0
+w1660812487
+8E:/FPGA_isp/ov5640_sobel/rtl/isp/rgb_ycbcr.v
+FE:/FPGA_isp/ov5640_sobel/rtl/isp/rgb_ycbcr.v
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/isp/rgb_ycbcr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/isp|E:/FPGA_isp/ov5640_sobel/rtl/isp/rgb_ycbcr.v|
+!i113 0
+R7
+R16
+R1
+vsdram_a_ref
+R8
+!i10b 1
+!s100 4e73m2dEd0YCf?3>h=QDd0
+!s11b hP3Y]1G7YORAQkC8zPAho2
+IA8]^`Oj2O6_ES[m0]C::72
+R3
+R0
+Z18 w1640251684
+8E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_a_ref.v
+FE:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_a_ref.v
+Z19 L0 20
+R5
+r1
+!s85 0
+31
+R9
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_a_ref.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/sdram|E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_a_ref.v|
+!i113 0
+R7
+R10
+R1
+vsdram_arbit
+R8
+!i10b 1
+!s100 nfOlQP9Hd1Mh5H`8gEk1C2
+!s11b 3?Z3l46BV_:iOV>_AOQ]81
+INKM]CB=`7;_SN95nAn=g<3
+R3
+R0
+w1661246189
+8E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_arbit.v
+FE:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_arbit.v
+L0 1
+R5
+r1
+!s85 0
+31
+R9
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_arbit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/sdram|E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_arbit.v|
+!i113 0
+R7
+R10
+R1
+vsdram_ctrl
+R8
+!i10b 1
+!s100 =g;<DK8DYKVNQ]4G113=W2
+!s11b eTg^6m286A8`<KOg[>_VI1
+I[;L]cO>6Q?iX7`@XG<JW@0
+R3
+R0
+w1661246174
+8E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_ctrl.v
+FE:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_ctrl.v
+L0 1
+R5
+r1
+!s85 0
+31
+R9
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/sdram|E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_ctrl.v|
+!i113 0
+R7
+R10
+R1
+vsdram_init
+R8
+!i10b 1
+!s100 2V@LUY;?b`4YLYaYGi<D`1
+!s11b 6R4o;jZJTOQeSQMbP2@162
+IF^U20<]@D8Z]9SU3X0^g>2
+R3
+R0
+w1661246202
+8E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_init.v
+FE:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_init.v
+L0 1
+R5
+r1
+!s85 0
+31
+R9
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_init.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/sdram|E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_init.v|
+!i113 0
+R7
+R10
+R1
+vsdram_read
+R8
+!i10b 1
+!s100 L6<:Xd2TzIedPe27?;kY83
+!s11b <TddjiZJ`m1FoZX9bLM@c0
+ILj2IXjnY[2>oK<EiE2GB20
+R3
+R0
+R18
+8E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_read.v
+FE:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_read.v
+R19
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_read.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/sdram|E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_read.v|
+!i113 0
+R7
+R10
+R1
+vsdram_top
+R11
+!i10b 1
+!s100 aLEERIKm9<_[l]?iTfIgU0
+!s11b M??jbC_6TWQMoAojkUXoB0
+I=2zV?H[;:Ff=KJUgULRc91
+R3
+R0
+w1660711318
+8E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_top.v
+FE:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_top.v
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/sdram|E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_top.v|
+!i113 0
+R7
+R10
+R1
+vsdram_write
+R11
+!i10b 1
+!s100 ?NFERf_UVBM17Lo4;eTCQ0
+!s11b n^;AGDB:fCDYKE:A[kTjW2
+IGOV>d1G7K4>Oc>j`k9E<Y2
+R3
+R0
+R18
+8E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_write.v
+FE:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_write.v
+R19
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_write.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/sdram|E:/FPGA_isp/ov5640_sobel/rtl/sdram/sdram_write.v|
+!i113 0
+R7
+R10
+R1
+vshift_register_1bit
+R2
+!i10b 1
+!s100 jXS588n@[g^jNah3WIF2L1
+!s11b ``RaC=S9bkCC7KcmldCbO2
+ISj>[kRbfZMnbBEQ`AE1eN0
+R3
+R0
+w1660821253
+8E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/shift_register_1bit/shift_register_1bit.v
+FE:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/shift_register_1bit/shift_register_1bit.v
+R4
+R5
+r1
+!s85 0
+31
+R9
+!s107 E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/shift_register_1bit/shift_register_1bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/shift_register_1bit|E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/shift_register_1bit/shift_register_1bit.v|
+!i113 0
+R7
+!s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/shift_register_1bit -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vsobel_isp
+R11
+!i10b 1
+!s100 K=IjebMS9MSdX4?ieN3CG1
+!s11b W[jZ:I=UI<Q>lNVifnP6^2
+I@E=FcUz^e_mO6ZJ<PDOcC2
+R3
+R0
+w1663331782
+8E:/FPGA_isp/ov5640_sobel/rtl/isp/sobel_isp.v
+FE:/FPGA_isp/ov5640_sobel/rtl/isp/sobel_isp.v
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/isp/sobel_isp.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl/isp|E:/FPGA_isp/ov5640_sobel/rtl/isp/sobel_isp.v|
+!i113 0
+R7
+R16
+R1
+vsqrt
+R8
+!i10b 1
+!s100 G@koBaFXzk=knaJ4AX3lG1
+!s11b _Q^THcEhVCGJ1d[Wi_Ial0
+IgF86@foKj0P_WM7:2HB<<2
+R3
+R0
+w1660812893
+8E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/sqrt/sqrt.v
+FE:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/sqrt/sqrt.v
+R4
+R5
+r1
+!s85 0
+31
+R9
+!s107 E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/sqrt/sqrt.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/sqrt|E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/sqrt/sqrt.v|
+!i113 0
+R7
+!s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/IP_core/sqrt -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vtb_matrix3_3_generate
+R2
+!i10b 1
+!s100 aSJ`Rc75mi:WhY7]>lHR81
+!s11b DQe_HP[j00DhLngYAk<f<2
+Ih<lS=nSMI4_InZ4N>Ek5`3
+R3
+R0
+w1663331736
+8E:/FPGA_isp/ov5640_sobel/quartus_prj/../sim/tb_matrix3_3_generate.v
+FE:/FPGA_isp/ov5640_sobel/quartus_prj/../sim/tb_matrix3_3_generate.v
+L0 3
+R5
+r1
+!s85 0
+31
+R6
+!s107 E:/FPGA_isp/ov5640_sobel/quartus_prj/../sim/tb_matrix3_3_generate.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/../sim|E:/FPGA_isp/ov5640_sobel/quartus_prj/../sim/tb_matrix3_3_generate.v|
+!i113 0
+R7
+!s92 -vlog01compat -work work +incdir+E:/FPGA_isp/ov5640_sobel/quartus_prj/../sim -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vtft_ctrl
+R8
+!i10b 1
+!s100 ]FgUR6D`U?ZLB::7AM4Q53
+!s11b jUL`VJPl_=AMS;am7^8@Y1
+I1UgbUP7cPEKio4IJPGQ@31
+R3
+R0
+w1660546270
+8E:/FPGA_isp/ov5640_sobel/rtl/tft_ctrl.v
+FE:/FPGA_isp/ov5640_sobel/rtl/tft_ctrl.v
+L0 1
+R5
+r1
+!s85 0
+31
+R9
+!s107 E:/FPGA_isp/ov5640_sobel/rtl/tft_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_isp/ov5640_sobel/rtl|E:/FPGA_isp/ov5640_sobel/rtl/tft_ctrl.v|
+!i113 0
+R7
+R17
+R1

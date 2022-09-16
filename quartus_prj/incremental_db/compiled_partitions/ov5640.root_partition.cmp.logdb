@@ -1,0 +1,4 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,isp_top:u_isp_top|sobel_isp:u_sobel_isp|lpm_mult:Mult1|mult_oct:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,isp_top:u_isp_top|sobel_isp:u_sobel_isp|lpm_mult:Mult0|mult_oct:auto_generated|mac_out2,
+PORT_SWAPPING,PORT_SWAPPING_FINISHED,isp_top:u_isp_top|sobel_isp:u_sobel_isp|lpm_mult:Mult1|mult_oct:auto_generated|mac_mult1,

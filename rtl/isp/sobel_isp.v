@@ -32,7 +32,7 @@ wire                   [   7:0]         matrix_p31                 ;
 wire                   [   7:0]         matrix_p32                 ;
 wire                   [   7:0]         matrix_p33                 ;
 
-wire                                    martrix_wr_en              ;
+wire                                    matrix_wr_en               ;
 wire                                    sobel_en                   ;
 
 assign sobel_wr_en = wr_en_dly[4];
@@ -41,7 +41,7 @@ matrix3_3_generate_8bit u_matrix3_3_generate_8bit(
     .sys_rst_n                         (sys_rst_n                 ),
     .wr_en                             (wr_en                     ),
     .img_Y                             (img_Y                     ),
-    .martrix_wr_en                     (martrix_wr_en             ),
+    .matrix_wr_en                      (matrix_wr_en              ),
     .matrix_p11                        (matrix_p11                ),
     .matrix_p12                        (matrix_p12                ),
     .matrix_p13                        (matrix_p13                ),
